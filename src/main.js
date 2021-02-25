@@ -7,7 +7,7 @@ const hashMap = xObject || [
     {logo: 'A', url: 'https://www.acfun.cn/'},
     {logo: 'B', url: 'https://www.bilibili.com/'}
 ]
-const simplfyUrl = (url) => {
+const simplifyUrl = (url) => {
     return url.replace('https://', '')
         .replace('http://', '')
         .replace('www.', '')
@@ -19,7 +19,7 @@ const render = () => {
         const $li = $(`<li>
            <div class="site">
              <div class="logo">${node.logo[0]}</div>
-             <div class="link">${simplfyUrl(node.url)}</div>
+             <div class="link">${simplifyUrl(node.url)}</div>
              <div class="close">
                <svg class="icon">
                  <use xlink:href="#icon-close"></use>
@@ -48,7 +48,7 @@ $('.addButton')
         }
         console.log(url)
         hashMap.push({
-            logo: simplfyUrl(url)[0].toUpperCase(),
+            logo: simplifyUrl(url)[0].toUpperCase(),
             url: url
         })
         render()
