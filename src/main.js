@@ -1,3 +1,4 @@
+let elem = null
 const $siteList = $('.siteList')
 const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
@@ -64,4 +65,7 @@ $(document).on('keypress', (e) => {
             window.open(hashMap[i].url)
         }
     }
+})
+$("input").on("keypress", (e) => {
+    e.stopPropagation()
 })
